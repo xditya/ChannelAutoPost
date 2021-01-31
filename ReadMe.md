@@ -13,7 +13,7 @@ This bot can send all new messages from one channel, directly to another channel
 Add the above values to the environment vars and deploy the bot.
 </details>
 <details>
-<summary>Local Deoploys</summary>
+<summary>Local Deploys</summary>
 <br>
 - Clone the repo:   <code>git clone https://github.com/xditya/ChannelAutoForwarder</code></br>
 - Make a <code>.env</code> file in the root of the repo, like <a href="https://github.com/xditya/ChannelAutoForwarder/blob/main/.env.sample">.env.sample</a> and fill in the values.</br>
