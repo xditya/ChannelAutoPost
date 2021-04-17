@@ -1,0 +1,35 @@
+
+{
+  "name": "UptoTelegraph Nexa bot",
+  "description": "A Simple bot for uploading telegram images , small videos and some types of stickers",
+  "repository": "https://github.com/Hirusha-H/TelegraphUploader",
+  "logo": "https://telegra.ph/file/c487058c1c2b6dd439c10.jpg",
+  "keywords": ["telegram", "telegraph", "imageuploader","telegram bot","telegraph uploader","Telegraph bot"],
+  "env": {
+     "BOT_TOKEN": {
+      "description": "Your Bot token from @Botfather",
+      "value": ""
+    },
+    "API_ID": {
+      "description": "Your API_ID from https://my.telegram.org/apps . Use your own API ID ",
+      "value": ""
+    },
+    "API_HASH": {
+      "description": "Your API_HASH from https://my.telegram.org/apps . Use your own API HASH",
+      "value": ""
+    },
+    "FROM_CHANNEL": {
+      "description": "The ID of the main channel from where posts have to be copied. (Use @chnlidbot to get it.)",
+      "value": ""
+    },
+    "TO_CHANNEL": {
+      "description": "The ID of the channel to which the posts are to be sent. (Use @chnlidbot to get it.)",
+      "value": ""
+    }
+   },
+   "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
