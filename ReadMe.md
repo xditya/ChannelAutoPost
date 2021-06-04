@@ -1,5 +1,7 @@
 # Channel Auto-Post Bot
 
+Use the [usermode](https://github.com/xditya/ChannelAutoPost/tree/user) branch, if you want to forward messages without being an admin in the from channel.
+
 This bot can send all new messages from one channel, directly to another channel (or group, just in case), without the forwarded tag!
 
 ## Setting up 
