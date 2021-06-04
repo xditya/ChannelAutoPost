@@ -1,11 +1,14 @@
 # Channel Auto-Post Bot
 
-This bot can send all new messages from one channel, directly to another channel, without the forwarded tag!
+This makes a user send all messages from one/many chat(s) to another chat(s).
 
 ## Setting up 
 * First:
 > `APP_ID` and `API_HASH` - Get it from my.telegram.org   
-> `BOT_TOKEN` - Get it from [@BotFather](https://t.me/BotFather)   
+> `SESSION` - A telethon session string, get it from [here](https://replit.com/@TeamUltroid/UltroidStringSession).   
+> `FROM_CHANNEL` - Channel ID(s) split by space or just one channel ID.   
+> `TO_CHANNEL` - Channel ID(s) split by space or just one channel ID.   
+
 * Chose a platform to deploy on:
 <details>
 <summary>Heroku/Kintohub/Zeet</summary>
@@ -21,11 +24,12 @@ Add the above values to the environment vars and deploy the bot.
 </details>
 
 ## Usage
-Add the bot to both channels with admin permission, and thats it!
 All new messages will be auto-posted!!
+Join the channel from you want the posts to be taken.
+Join as admin in the channel where you want the posts to be sent to.
 
-Visit [@TeamCyphers](https://t.me/TeamCyphers) for help.
+Visit [@BotzHubChat](https://t.me/BotzHubChat) for help.
 ## Credits
 > [Lonami](https://github.com/LonamiWebs), for [Telethon](https://github.com/LonamiWebs/Telethon).   
 > [xditya](https://github.com/xditya), me.   
-> [@ettan_fan](https://t.me/ettan_fan), for the whole idea.   
+> [@Unkn0wn_007](https://t.me/Unkn0wn_007), for the whole idea.   
