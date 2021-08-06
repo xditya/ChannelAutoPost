@@ -9,8 +9,6 @@ This makes a user send all messages from one/many chat(s) to another chat(s).
 > `FROM_CHANNEL` - Channel ID(s) split by space or just one channel ID.   
 > `TO_CHANNEL` - Channel ID(s) split by space or just one channel ID.   
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
 * Chose a platform to deploy on:
 <details>
 <summary>Heroku/Kintohub/Zeet</summary>
