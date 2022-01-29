@@ -33,3 +33,4 @@ Visit [@BotzHubChat](https://t.me/BotzHubChat) for help.
 > [Lonami](https://github.com/LonamiWebs), for [Telethon](https://github.com/LonamiWebs/Telethon).   
 > [xditya](https://github.com/xditya), me.   
 > [@Unkn0wn_007](https://t.me/Unkn0wn_007), for the whole idea.   
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
