@@ -1,0 +1,41 @@
+{
+    "name": "Channel Auto Post",
+    "description": "Channel Auto Post Bot for telegram, by @BotzHub.",
+    "logo": "",
+    "keywords": [
+        "telegram",
+        "telethon",
+        "telegram-bot",
+        "botzhub"
+    ],
+    "repository": "https://github.com/xditya/ChannelAutoPost",
+    "website": "xditya.me",
+    "success_url": "https://t.me/BotzHub",
+    "env": {
+        "BOT_TOKEN": {
+            "description": "Bot token, get it from @BotFather.",
+            "value": ""
+        },
+        "APP_ID": {
+            "description": "Your app id from my.telegram.org",
+            "value": ""
+        },
+        "API_HASH": {
+            "API_HASH": "Your api hash from my.telegram.org",
+            "value": ""
+        },
+        "FROM_CHANNEL": {
+            "description": "The ID of the main channel from where posts have to be copied.",
+            "value": ""
+        },
+        "TO_CHANNEL": {
+            "description": "The ID of the channel to which the posts are to be sent.",
+            "value": ""
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ]
+}
