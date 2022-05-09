@@ -1,0 +1,41 @@
+{
+    "name": "Channel Auto Post",
+    "description": "Channel Auto Post Bot for telegram, by @BotzHub.",
+    "logo": "",
+    "keywords": [
+        "telegram",
+        "telethon",
+        "telegram-bot",
+        "botzhub"
+    ],
+    "repository": "https://github.com/xditya/ChannelAutoPost",
+    "website": "xditya.me",
+    "success_url": "https://t.me/BotzHub",
+    "env": {
+        "SESSION": {
+            "description": "A telethon session string for your user account.",
+            "value": ""
+        },
+        "APP_ID": {
+            "description": "Your app id from my.telegram.org",
+            "value": ""
+        },
+        "API_HASH": {
+            "API_HASH": "Your api hash from my.telegram.org",
+            "value": ""
+        },
+        "FROM_CHANNEL": {
+            "description": "Channel ID(s) split by space or just one channel ID.",
+            "value": ""
+        },
+        "TO_CHANNEL": {
+            "description": "Channel ID(s) split by space or just one channel ID.",
+            "value": ""
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ]
+}
