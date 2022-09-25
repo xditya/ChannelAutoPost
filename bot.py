@@ -38,12 +38,12 @@ except:
 @datgbot.on(events.NewMessage(pattern="/start"))
 async def _(event):
     ok = await datgbot(GetFullUserRequest(event.sender_id))
-    await event.reply(f"Hi `{ok.user.first_name}`!\n\nI am a channel auto-post bot!! Read /help to know more!\n\nI can be used in only two channels (one user) at a time. Kindly deploy your own bot.\n\n[More bots](https://t.me/its_xditya)..", buttons=[Button.url("Repo", url="https://github.com/xditya/ChannelAutoForwarder"), Button.url("Dev", url="https://t.me/its_xditya")], link_preview=False)
+    await event.reply(f"Hi `{ok.user.first_name}`!\n\nI am a channel auto-post bot!! Read /help to know more!\n\nI can be used in only two channels (one user) at a time. Kindly deploy your own bot.\n\n[More bots](https://t.me/inekobasiTR)..", buttons=[Button.url("Repo", url="https://github.com/mrt020835c06/ChannelAutoForwarder"), Button.url("Dev", url="https://t.me/inekobasiTR")], link_preview=False)
 
 
 @datgbot.on(events.NewMessage(pattern="/help"))
 async def helpp(event):
-    await event.reply("**Help**\n\nThis bot will send all new posts in one channel to the other channel. (without forwarded tag)!\nIt can be used only in two channels at a time, so kindly deploy your own bot from [here](https://github.com/xditya/ChannelAutoForwarder).\n\nAdd me to both the channels and make me an admin in both, and all new messages would be autoposted on the linked channel!!\n\nLiked the bot? Drop a ♥ to @xditya_Bot :)")
+    await event.reply("**Help**\n\nThis bot will send all new posts in one channel to the other channel. (without forwarded tag)!\nIt can be used only in two channels at a time, so kindly deploy your own bot from [here](https://github.com/mrt020835c06/ChannelAutoForwarder).\n\nAdd me to both the channels and make me an admin in both, and all new messages would be autoposted on the linked channel!!\n\nLiked the bot? Drop a ♥ to @murtix_bot:)")
 
 @datgbot.on(events.NewMessage(incoming=True, chats=frm)) 
 async def _(event): 
