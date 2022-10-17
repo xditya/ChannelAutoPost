@@ -1,5 +1,5 @@
 #    This file is part of the ChannelAutoForwarder distribution (https://github.com/xditya/ChannelAutoForwarder).
-#    Copyright (c) 2021 Adiya
+#    Copyright (c) 2021-2022 Aditya
 #    
 #    This program is free software: you can redistribute it and/or modify  
 #    it under the terms of the GNU General Public License as published by  
@@ -16,7 +16,6 @@ import logging
 import asyncio
 from telethon import TelegramClient, events, Button
 from decouple import config
-from telethon.tl.functions.users import GetFullUserRequest
 
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s', level=logging.INFO)
 
@@ -26,8 +25,8 @@ try:
     apiid = config("APP_ID", cast=int)
     apihash = config("API_HASH")
     bottoken = config("BOT_TOKEN")
-    frm = config("FROM_CHANNEL", cast=int)
-    tochnl = config("TO_CHANNEL", cast=int)
+    frm = config("FROM_CHANNEL", cast=lambda x: [int(_) for _ in x.split(" ")])
+    tochnl = config("TO_CHANNEL", cast=lambda x: [int(_) for _ in x.split(" ")])
     datgbot = TelegramClient('bot', apiid, apihash).start(bot_token=bottoken)
 except:
     print("Environment vars are missing! Kindly recheck.")
@@ -46,7 +45,7 @@ async def helpp(event):
 
 @datgbot.on(events.NewMessage(incoming=True, chats=frm)) 
 async def _(event): 
-    if not event.is_private:
+    for tochnl in tochnl:
         try:
             if event.poll:
                 return
@@ -57,10 +56,10 @@ async def _(event):
                 try:
                     if event.media.webpage:
                         await datgbot.send_message(tochnl, event.text, link_preview = False)
-                        return
                 except:
                     media = event.media.document
                     await datgbot.send_file(tochnl, media, caption = event.text, link_preview = False)
+                finally:
                     return
             else:
                 await datgbot.send_message(tochnl, event.text, link_preview = False)
