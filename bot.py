@@ -17,21 +17,23 @@ from telethon import TelegramClient, events, Button
 from decouple import config
 
 logging.basicConfig(
-    format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.INFO
+    level=logging.INFO, format="[%(levelname)s] %(asctime)s - %(message)s"
 )
+log = logging.getLogger("ChannelAutoPost")
 
 # start the bot
-logging.info("Starting...")
+log.info("Starting...")
 try:
     apiid = config("APP_ID", cast=int)
     apihash = config("API_HASH")
     bottoken = config("BOT_TOKEN")
     frm = config("FROM_CHANNEL", cast=lambda x: [int(_) for _ in x.split(" ")])
     tochnls = config("TO_CHANNEL", cast=lambda x: [int(_) for _ in x.split(" ")])
-    datgbot = TelegramClient("bot", apiid, apihash).start(bot_token=bottoken)
-except:
-    logging.error("Environment vars are missing! Kindly recheck.")
-    logging.info("Bot is quiting...")
+    datgbot = TelegramClient(None, apiid, apihash).start(bot_token=bottoken)
+except Exception as exc:
+    log.error("Environment vars are missing! Kindly recheck.")
+    log.info("Bot is quiting...")
+    log.error(exc)
     exit()
 
 
@@ -41,7 +43,7 @@ async def _(event):
         f"Hi `{event.sender.first_name}`!\n\nI am a channel auto-post bot!! Read /help to know more!\n\nI can be used in only two channels (one user) at a time. Kindly deploy your own bot.\n\n[More bots](https://t.me/its_xditya)..",
         buttons=[
             Button.url("Repo", url="https://github.com/xditya/ChannelAutoForwarder"),
-            Button.url("Dev", url="https://t.me/its_xditya"),
+            Button.url("Dev", url="https://xditya.me"),
         ],
         link_preview=False,
     )
@@ -81,12 +83,12 @@ async def _(event):
             else:
                 await datgbot.send_message(tochnl, event.text, link_preview=False)
         except Exception as exc:
-            logging.error(
+            log.error(
                 "TO_CHANNEL ID is wrong or I can't send messages there (make me admin).\nTraceback:\n%s",
                 exc,
             )
 
 
-logging.info("Bot has started.")
-logging.info("Do visit @its_xditya..")
+log.info("Bot has started.")
+log.info("Do visit https://xditya.me !")
 datgbot.run_until_disconnected()
